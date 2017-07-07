@@ -1,0 +1,18 @@
+<h4>Product List</h4>
+<table>
+    <tr><th>Title</th><th>Name</th><th>Body</th></tr>
+<% @products.each do |product| %>
+    <tr data-id="<%= product.id %>">
+        <td><a href="<%= product.url %>"><%= product.title %></a></td>
+        <td><%= product.description %></td>
+    </tr>
+<% end %>
+</table>
+
+<h4>Add New</h4>
+<form method="post" action="/new">
+    Title :<input type="text" name="title"><br />
+    URL :<input type="text" name="url"><br />
+    Description :<input type="text" name="description"><br />
+    <input type="submit" value="POST">
+</form>
